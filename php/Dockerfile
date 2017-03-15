@@ -1,0 +1,1 @@
+FROM raphaelbronsveld/php7-xdebug:latest

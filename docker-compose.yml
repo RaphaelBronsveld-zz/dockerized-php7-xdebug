@@ -1,0 +1,19 @@
+php:
+    build: ./php
+    volumes_from:
+      - data
+
+nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    links:
+      - php:php
+    volumes_from:
+      - data
+
+data:
+    image: ubuntu
+    volumes:
+        - ./html:/var/www/html
+        - ./nginx:/etc/nginx/conf.d/
